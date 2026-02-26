@@ -52,15 +52,17 @@ const data = {
 
 function App() {
   return (
-    <div className="px-16 py-8">
-      <Menu />
-      <MainPhotos />
+    <>
+      <div className="px-16 py-8">
+        <Menu />
+        <MainPhotos />
 
-      <div className="flex pt-6">
-        <ProductDescription data={data} />
-        <Order data={data} />
+        <div className="flex pt-6">
+          <ProductDescription data={data} />
+          <Order data={data} />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 
