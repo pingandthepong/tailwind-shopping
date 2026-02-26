@@ -26,41 +26,36 @@ const OptionSelect = ({ data, title, subject }) => {
 
   return (
     <ul className="flex flex-wrap gap-4 ">
-      {subject.map((options) => {
-        const [option, value] = Object.entries(options)[0];
+      {subject.map((item) => {
+        const [option, value] = Object.entries(item)[0];
         const isSoldOut = title === "size" && value <= 0;
+        const isColor = typeof value === "string" && value.startsWith("#");
 
-        for (let option in options) {
-          return (
-            <li
-              key={option}
-              className={`${liBase} ${liVariants[title]} ${isSoldOut ? "opacity-30 cursor-not-allowed" : ""}`}
-              style={{
-                backgroundColor:
-                  typeof options[option] === "string" &&
-                  options[option].startsWith("#")
-                    ? options[option]
-                    : "",
-              }}>
-              <label
-                className={title === "color" ? "hidden" : ""}
-                htmlFor={option}>
-                {option}
-              </label>
-              <input
-                required
-                type="radio"
-                id={option}
-                disabled={isSoldOut}
-                className={`${radioBase} ${radioVariants[title]} ${isSoldOut ? "cursor-not-allowed" : "cursor-pointer"}`}
-                name={`${title} option`}
-                value={option}
-                onClick={(e) => handleRadioClick(e)}
-              />
-              <div className={`${peerBase} ${peerVariants[title]}`}></div>
-            </li>
-          );
-        }
+        return (
+          <li
+            key={option}
+            className={`${liBase} ${liVariants[title]} ${isSoldOut ? "opacity-30 cursor-not-allowed" : ""}`}
+            style={{
+              backgroundColor: isColor ? value : undefined,
+            }}>
+            <label
+              className={title === "color" ? "hidden" : ""}
+              htmlFor={option}>
+              {option}
+            </label>
+            <input
+              required
+              type="radio"
+              id={option}
+              disabled={isSoldOut}
+              className={`${radioBase} ${radioVariants[title]} ${isSoldOut ? "cursor-not-allowed" : "cursor-pointer"}`}
+              name={`${title} option`}
+              value={option}
+              onClick={(e) => handleRadioClick(e)}
+            />
+            <div className={`${peerBase} ${peerVariants[title]}`}></div>
+          </li>
+        );
       })}
     </ul>
   );
