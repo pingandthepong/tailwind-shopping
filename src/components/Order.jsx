@@ -10,7 +10,7 @@ const Order = ({ data }) => {
   };
 
   return (
-    <div className="pl-8">
+    <div className="pl-8 ml-8 border-l border-gray-300">
       <p className="text-4xl">{Intl.NumberFormat().format(data.price)}원</p>
       <div className="flex items-center gap-2 mt-4 mb-16">
         <div className="flex gap-0.5">

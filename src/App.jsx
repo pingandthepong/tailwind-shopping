@@ -56,7 +56,7 @@ function App() {
       <Menu />
       <MainPhotos />
 
-      <div className="flex pt-6 divide-x-1 divide-gray-300">
+      <div className="flex pt-6">
         <ProductDescription data={data} />
         <Order data={data} />
       </div>
