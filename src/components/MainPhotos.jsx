@@ -1,7 +1,7 @@
 import React from "react";
-import Images01 from "../../public/shop_detail_01_600.webp";
-import Images02 from "../../public/shop_detail_02_600.webp";
-import Images03 from "../../public/shop_detail_03_600.webp";
+import Images01 from "../../public/shop_detail_01_960.webp";
+import Images02 from "../../public/shop_detail_02_960.webp";
+import Images03 from "../../public/shop_detail_03_960.webp";
 
 const MainPhotos = () => {
   const imgWrapBase = "basis-1/3 aspect-square overflow-hidden";
